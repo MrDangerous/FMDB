@@ -11,4 +11,5 @@
 @interface DataBaseModel : NSObject
 +(DataBaseModel *)shardDataBaseModle;
 -(void)moveDataBaseToLibrary;
+-(void)insert;
 @end
