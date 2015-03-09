@@ -12,4 +12,7 @@
 +(DataBaseModel *)shardDataBaseModle;
 -(void)moveDataBaseToLibrary;
 -(void)insert;
+-(void)selsect;
+-(void)delete;
+-(void)multithread;
 @end

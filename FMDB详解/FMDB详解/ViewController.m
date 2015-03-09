@@ -10,6 +10,7 @@
 #import "FMDB.h"
 #import "AppUtil.h"
 #import "User.h"
+#import "DataBaseModel.h"
 @interface ViewController ()
 
 @end
@@ -18,7 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        
+    
+    NSLog(@"Caches:%@",[AppUtil getCachesPath]);
+    [[DataBaseModel shardDataBaseModle]moveDataBaseToLibrary];
+    [[DataBaseModel shardDataBaseModle]insert];
+    [[DataBaseModel shardDataBaseModle]selsect];
+    [[DataBaseModel shardDataBaseModle]delete];
+    [[DataBaseModel shardDataBaseModle]multithread];
+    
+    /*
     NSString *atPath = [[NSBundle mainBundle] pathForResource:@"Demo" ofType:@"db"];
 
     
@@ -33,14 +42,14 @@
    
     
     
-//    FMResultSet *rs= [dataBase executeQuery:@"select *from User "];
-//    //遍历结果集
-//    while([rs next])
-//    {
-//        NSString *userName = [rs stringForColumn:@"UserName"];
-//        NSString *userPassword = [rs stringForColumn:@"UserPassword"];
-//        NSLog(@"name=%@ password=%@",userName,userPassword);
-//    }
+    FMResultSet *rs= [dataBase executeQuery:@"select *from User "];
+    //遍历结果集
+    while([rs next])
+    {
+        NSString *userName = [rs stringForColumn:@"UserName"];
+        NSString *userPassword = [rs stringForColumn:@"UserPassword"];
+        NSLog(@"name=%@ password=%@",userName,userPassword);
+    }
 
     
     if ([dataBase open]) {
@@ -61,7 +70,7 @@
    
     
     [dataBase close];
-
+*/
 
 }
 
